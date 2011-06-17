@@ -1,3 +1,8 @@
+/**
+ * AutoBop
+ * http://pixor.net/AutoBop/
+ * Author: Mike Matz <mike@pixor.net>
+ */
 (function(w) {
 	var log = function(str) {
 		if (typeof w.console != 'undefined') {
@@ -6,16 +11,16 @@
 			alert(str);
 		}
 	};
-	log('loading..');
+	log('Loading AutoBop..');
 	if (typeof w.jQuery == 'undefined') {
-		log('jQuery not loaded on this page');
+		log('Error: jQuery not loaded!');
 		return;
 	}
 	var $ = w.jQuery;
 	var c = function() {
 		var $b = $('a#btn_upvote');
 		if ($b.size()) {
-			log('Found ' + $b.size() + ' AWESOME buttons');
+			log('Clicking AWESOME! button');
 			$b.each(function(idx, el) {
 				var btnOffset = $(el).offset();
 				var e = $.Event('click');
@@ -24,29 +29,24 @@
 				e.pageX = btnOffset.left + r;
 				e.pageY = btnOffset.top + r;
 				e.relatedTarget = $(el).parent().get(0);
-				log('Click button:');
-				log(el);
 				$(el).trigger(e);
-				log('Clicked with event:');
-				log(e);
+				log('Clicked!');
 			});
-			//$b.click();
-			//log('clicked');
 		} else {
-			log('Couldn\'t find button to click');
+			log('Error: Couldn\'t find any buttons to click');
 			clearInterval();
 			return false;
 		}
 		return true;
 	};
-	log('attempting to run..');
+	log('Attempting first run..');
 	if (c()) {
-		log('success; setting timer for 15 seconds');
+		log('That seemed to work; setting up the timer');
 		setInterval(c, 15000);
 	} else {
-		log('failure; not setting timer');
+		log('Error clicking button; not setting timer');
 	}
-	log('finished loading');
+	log('AutoBop load complete');
 })(window);
 
 
