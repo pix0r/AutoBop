@@ -1,6 +1,6 @@
 <?php
 
-$jsfile = "dj-bookmarklet.js";
+$jsfile = "autobop.js";
 exec("cat $jsfile | jsmin/jsmin", $lines);
 $jsmin = implode($lines);
 $js = file_get_contents($jsfile);

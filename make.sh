@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cat dj-bookmarklet.js | jsmin/jsmin > dj-bookmarklet.min.js
+cat autobop.js | jsmin/jsmin > autobop.min.js
 
 
 
