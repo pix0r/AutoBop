@@ -8,7 +8,7 @@
 		if (typeof w.console != 'undefined') {
 			w.console.log(str);
 		} else {
-			alert(str);
+			// alert(str);
 		}
 	};
 	log('Loading AutoBop..');
