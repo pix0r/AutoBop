@@ -28,6 +28,10 @@ $js = file_get_contents($jsfile);
 	Code (<a href="<?php echo $jsfile ?>">raw file</a>):
 	<pre class="brush: js"><?php echo str_replace(array('<', '>'), array('&lt;', '&gt;'), $js); ?></pre>
 
+	<p>Bookmarklet process: pass script through <a href="http://www.crockford.com/javascript/jsmin.html">JSMin</a>, remove newlines, and embed in an anchor tag</p>
+
+<br />
+
 	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
