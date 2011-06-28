@@ -20,10 +20,10 @@
 		return;
 	}
 	var $ = w.jQuery;
+	var $b;
 	var findAwesome = function() {
 		var btnSize = [126, 44];
 		var btnPos = [370, 555];
-		var $b = false;
 		log('findAwesome');
 		$('a').each(function(idx, el) {
 			if ($b) {
@@ -47,8 +47,9 @@
 		return $b;
 	};
 	var c = function() {
-		//var $b = $('a#btn_upvote');
-		var $b = findAwesome();
+		if (!$b) {
+			$b = findAwesome();
+		}
 		if ($b && $b.size()) {
 			log('Clicking AWESOME! button');
 			$b.each(function(idx, el) {
