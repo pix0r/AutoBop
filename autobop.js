@@ -11,15 +11,45 @@
 			// alert(str);
 		}
 	};
+	if (typeof w.clearInterval === 'undefined') {
+		w.clearInterval = function() {};
+	}
 	log('Loading AutoBop..');
 	if (typeof w.jQuery == 'undefined') {
 		log('Error: jQuery not loaded!');
 		return;
 	}
 	var $ = w.jQuery;
+	var findAwesome = function() {
+		var btnSize = [126, 44];
+		var btnPos = [370, 555];
+		var $b = false;
+		log('findAwesome');
+		$('a').each(function(idx, el) {
+			if ($b) {
+				return;
+			}
+			log('Checking element:');
+			log(el);
+			var btnOffset = $(el).position();
+			if (btnOffset.left != btnPos[0] || btnOffset.top != btnPos[1]) {
+				log('Position mismatch. Elem:');
+				log(btnOffset);
+				return;
+			}
+			if ($(el).width() != btnSize[0] || $(el).height() != btnSize[1]) {
+				log('Width/Height mismatch. Elem: ' + $(el).width() + 'x' + $(el).height());
+				return;
+			}
+			$b = $(el);
+			log('Found awesome button');
+		});
+		return $b;
+	};
 	var c = function() {
-		var $b = $('a#btn_upvote');
-		if ($b.size()) {
+		//var $b = $('a#btn_upvote');
+		var $b = findAwesome();
+		if ($b && $b.size()) {
 			log('Clicking AWESOME! button');
 			$b.each(function(idx, el) {
 				var btnOffset = $(el).offset();
@@ -34,7 +64,7 @@
 			});
 		} else {
 			log('Error: Couldn\'t find any buttons to click');
-			clearInterval();
+			w.clearInterval();
 			return false;
 		}
 		return true;
