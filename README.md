@@ -16,7 +16,7 @@ Building
 
 The bookmarklet process includes a few steps:
 
- # Ensure that there are no double-quotes (") in your source code (use single quotes instead) (I'm sure this can be fixed with some scripting or changing the encoding, but I'm lazy)
- # Pass the script through JSMin
- # Remove newlines from the minified code
- # Embed directly in an anchor tag
+ * Ensure that there are no double-quotes (") in your source code (use single quotes instead) (I'm sure this can be fixed with some scripting or changing the encoding, but I'm lazy)
+ * Pass the script through JSMin
+ * Remove newlines from the minified code
+ * Embed directly in an anchor tag
