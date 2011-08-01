@@ -24,23 +24,15 @@ $js = file_get_contents($jsfile);
 		<li>Click the AutoBop! bookmark</li>
 		<li>Profit</li>
 	</ul>
-	<br />
-	Code (<a href="<?php echo $jsfile ?>">raw file</a>):
-	<pre class="brush: js"><?php echo str_replace(array('<', '>'), array('&lt;', '&gt;'), $js); ?></pre>
-
-	<p>Bookmarklet process: pass script through <a href="http://www.crockford.com/javascript/jsmin.html">JSMin</a>, remove newlines, and embed in an anchor tag</p>
-
-<br />
-
-	<script type="text/javascript">
-	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-	</script>
-	<script type="text/javascript">
-	try {
-		var pageTracker = _gat._getTracker("UA-432412-3");
-		pageTracker._trackPageview();
-	} catch(err) {}</script>
+	<h3>Getting the code</h3>
+	<p>Source code is available: <a href="https://github.com/pix0r/AutoBop">AutoBop on Github</a></p>
+	<p>The bookmarklet process includes a few steps:</p>
+	<ol>
+		<li>Ensure that there are no double-quotes (&quot;) in your source code (use single quotes instead) <em>(I'm sure this can be fixed with some scripting or changing the encoding, but I'm lazy)</em></li>
+		<li>Pass the script through <a href="http://www.crockford.com/javascript/jsmin.html">JSMin</a></li>
+		<li>Remove newlines from the minified code</li>
+		<li>Embed directly in an anchor tag: <code>&lt;a href=&quot;your-minified-bookmarklet&quot;&gt;AUTOBOP!&lt;/a&gt;</code></li>
+	</ol>
 
 </body>
 </html>

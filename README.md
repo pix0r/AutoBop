@@ -1,7 +1,7 @@
 AutoBop
 =======
 
-Auto-headbop mode for http://turntable.fm.  After run, will press the "AWESOME!" button automatically once every 15 seconds.</p>
+Auto-headbop mode for http://turntable.fm.  After run, will press the "AWESOME!" button automatically once every 15 seconds.
 
 How to use
 ----------
@@ -11,4 +11,12 @@ How to use
  * Click the AutoBop! bookmark
  * Profit
 
-Bookmarklet process: pass script through http://www.crockford.com/javascript/jsmin.html , remove newlines, and embed in an anchor tag
+Building
+--------
+
+The bookmarklet process includes a few steps:
+
+ # Ensure that there are no double-quotes (") in your source code (use single quotes instead) (I'm sure this can be fixed with some scripting or changing the encoding, but I'm lazy)
+ # Pass the script through JSMin
+ # Remove newlines from the minified code
+ # Embed directly in an anchor tag
