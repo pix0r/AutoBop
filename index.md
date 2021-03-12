@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+# AutoBop
 
-You can use the [editor on GitHub](https://github.com/pix0r/AutoBop/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Auto-headbop mode for [Turntable.fm](https://turntable.fm). After run, will press the "AWESOME!" button automatically once every 15 seconds.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## How to use
 
-### Markdown
+- Drag this link into your bookmarks bar: [AutoBop!](#)
+- Load up your [Turntable](https://turntable.fm) page, make sure the AWESOME! button is present
+- Click the AutoBop! bookmark
+- Profit
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Getting the code
 
-```markdown
-Syntax highlighted code block
+Source code is available: [AutoBop on GitHub](https://github.com/pix0r/AutoBop)
 
-# Header 1
-## Header 2
-### Header 3
+The bookmarklet process includes a few steps:
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/pix0r/AutoBop/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- Ensure that there are no double-quotes (&quot;) in your source code (use single quotes instead) (I'm sure this can be fixed with some scripting or changing the encoding, but I'm lazy)
+- Pass the script through [JSMin](http://www.crockford.com/javascript/jsmin.html)
+- Remove newlines from the minified code
+- Embed directly in an anchor tag: `<a href="your-minified-bookmarklet">AUTOBOP!</a>`
